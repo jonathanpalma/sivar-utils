@@ -31,13 +31,13 @@ jobs:
           name: Install Dependencies
           command: npm ci
       - run:
-          name: Config git
+          name: Config git user
           command: |
             git config user.email "ci-build@sivar-utils.org"
             git config user.name "ci-build"
       - add_ssh_keys:
           fingerprints:
-            - '48:38:cd:61:4c:91:63:58:1d:4e:ef:07:ff:8a:09:f9'
+            - '3c:de:50:b2:93:a8:6c:93:16:a0:af:82:89:2a:e3:0e'
       - run:
           name: Build and deploy docs to gh-pages
           command: npm run deploy
