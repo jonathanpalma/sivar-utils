@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Validate lockfile
-          command: npx lockfile-lint --path package-lock.json --type npm --allowed-hosts npm
+          command: npx lockfile-lint -p package-lock.json -t npm -a npm
       - restore_cache:
           key: npm-cache-{{ checksum "package-lock.json" }}
       - run:
@@ -36,15 +36,14 @@ jobs:
       - run:
           name: Build and deploy docs to gh-pages
           command: npm run deploy
-
 workflows:
   version: 2
   build:
     jobs:
       - test
       - docs-deploy:
-        requires:
-          - test
-        filters:
-          branches:
-            only: master
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
