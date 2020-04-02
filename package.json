@@ -11,11 +11,9 @@
     "typescript",
     "javascript"
   ],
-  {
-    "files": [
-      "lib/"
-    ]
-  },
+  "files": [
+    "lib/"
+  ],
   "main": "lib/index.js",
   "module": "lib/index.es.js",
   "jsnext:main": "lib/index.es.js",
