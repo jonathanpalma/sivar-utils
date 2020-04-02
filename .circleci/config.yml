@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     working_directory: ~/sivar-utils
     docker:
       - image: circleci/node:10
@@ -21,6 +21,30 @@ jobs:
       - run:
           name: Run Tests
           command: npm test -- --verbose
+  docs-deploy:
+    working_directory: ~/sivar-utils
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
       - run:
-          name: Build
-          command: npm run build
+          name: Install Dependencies
+          command: npm ci
+      - add_ssh_keys:
+          fingerprints:
+            - '48:38:cd:61:4c:91:63:58:1d:4e:ef:07:ff:8a:09:f9'
+      - run:
+          name: Build and deploy docs to gh-pages
+          command: npm run deploy
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test
+      - docs-deploy:
+        requires:
+          - test
+        filters:
+          branches:
+            only: master
