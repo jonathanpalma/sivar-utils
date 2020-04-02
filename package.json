@@ -1,0 +1,128 @@
+{
+  "name": "sivar-utils",
+  "version": "0.0.1",
+  "description": "Utilidades para validar documentos salvadorenos",
+  "keywords": [
+    "sivar",
+    "dui",
+    "nit",
+    "documentos",
+    "validar",
+    "typescript",
+    "javascript"
+  ],
+  {
+    "files": [
+      "lib/"
+    ]
+  },
+  "main": "lib/index.js",
+  "module": "lib/index.es.js",
+  "jsnext:main": "lib/index.es.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "lint": "eslint \"src/**/*.ts\"",
+    "prepare": "npm run build",
+    "test:watch": "npm run test -- --watch",
+    "test": "jest -c jest.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathanpalma/sivar-utils.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonathanpalma/sivar-utils/issues"
+  },
+  "homepage": "https://github.com/jonathanpalma/sivar-utils#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@rollup/plugin-url": "^4.0.2",
+    "@types/jest": "^25.1.4",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "jest": "^25.2.4",
+    "prettier": "^2.0.2",
+    "rollup": "^2.3.2",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "ts-jest": "^25.3.0",
+    "typescript": "^3.8.3"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "env": {
+      "browser": true,
+      "jest": true,
+      "node": true
+    },
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "plugins": [
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "rules": {
+      "@typescript-eslint/explicit-member-accessibility": 0,
+      "@typescript-eslint/explicit-function-return-type": 0,
+      "no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "_"
+        }
+      ],
+      "no-plusplus": [
+        "error",
+        {
+          "allowForLoopAfterthoughts": true
+        }
+      ],
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "trailingComma": "es5"
+        }
+      ],
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": true
+        }
+      ],
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "ts": "never"
+        }
+      ]
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": [
+            "src"
+          ],
+          "extensions": [
+            ".ts"
+          ]
+        }
+      }
+    }
+  }
+}
