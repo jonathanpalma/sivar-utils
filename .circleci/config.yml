@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/sivar-utils
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:10
     steps:
       - checkout
       - run:
