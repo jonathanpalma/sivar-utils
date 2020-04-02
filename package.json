@@ -1,6 +1,6 @@
 {
   "name": "sivar-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utilidades para validar documentos salvadorenos",
   "keywords": [
     "sivar",
@@ -8,6 +8,7 @@
     "nit",
     "documentos",
     "validar",
+    "utils",
     "typescript",
     "javascript"
   ],
