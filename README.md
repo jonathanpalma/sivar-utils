@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>sivar-utils 🧙</h1>
+  <h1>sivar-utils 🇸🇻</h1>
 
   <p>Utilidades para validar documentos salvadoreños (DUI, NIT, etc...)</p>
 </div>
