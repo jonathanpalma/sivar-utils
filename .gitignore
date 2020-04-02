@@ -10,6 +10,9 @@ coverage
 build
 lib
 
+# documentation
+docs
+
 # merge conflicts
 *.orig
 

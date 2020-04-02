@@ -1,5 +1,11 @@
 export const duiRegExp = /(^\d{8})-(\d$)/;
 
+/**
+ * Verifies that given DUI format is valid
+ *
+ * @param  {string} str       A string representing DUI digits (with hyphen)
+ * @returns {boolean}         Validity of the given DUI
+ */
 function isDUI(str: string): boolean {
   if (!duiRegExp.test(str)) return false;
 
