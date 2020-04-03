@@ -1,3 +1,5 @@
+import municipalitiesCode from './municipalitiesCodeRanges';
+
 export const nitRegExp = /(^\d{4})-(\d{6})-(\d{3})-(\d$)/;
 
 /**
@@ -6,7 +8,6 @@ export const nitRegExp = /(^\d{4})-(\d{6})-(\d{3})-(\d$)/;
  * @param  {string} str       A string representing NIT digits (with hyphen)
  * @returns {boolean}         Validity of the given NIT
  */
-
 function isHyphenIndex(i: Number) {
   return i === 4 || i === 11;
 }
@@ -34,8 +35,31 @@ function calculateValidatorDigit(str: string) {
   return sum > 1 ? 11 - sum : 0;
 }
 
+function isForeignCode(num: number) {
+  return num === 9;
+}
+
+function isNationalCode(str: string) {
+  if (!(Number(str[0]) === 0 || Number(str[0]) === 1)) return false;
+  for (let i = 0; i < municipalitiesCode.length; i++) {
+    const [minRange, maxRange] = municipalitiesCode[i];
+    if (Number(str) >= minRange && Number(str) <= maxRange) return true;
+    if (minRange >= Number(str)) return false;
+  }
+  return false;
+}
+
+function isValidMunicipalityCode(str: string) {
+  if (isForeignCode(Number(str[0]))) return true;
+  if (isNationalCode(str)) return true;
+  return false;
+}
+
 function isNIT(str: string): boolean {
   if (!nitRegExp.test(str)) return false;
+
+  if (!isValidMunicipalityCode(str.substring(0, 4))) return false;
+
   let sum = 0;
   if (Number(str.substring(12, 15)) <= 100) {
     sum = calculateValidatorDigitOldFormat(str);
