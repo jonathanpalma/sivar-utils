@@ -56,7 +56,10 @@ function isValidMunicipalityCode(str: string) {
 }
 
 function setFullYear(year: string) {
-  return Number(year) >= 30 ? '19'.concat(year) : '20'.concat(year);
+  return Number(year) >=
+    Number(new Date().getFullYear().toString().substr(-2)) + 1
+    ? '19'.concat(year)
+    : '20'.concat(year);
 }
 
 function isValidDate(str: string) {
