@@ -9,10 +9,10 @@ export const nitRegExp = /(^\d{4})-(\d{6})-(\d{3})-(\d$)/;
  * @returns {boolean}         Validity of the given NIT
  */
 function isHyphenIndex(i: Number) {
-  return i === 4 || i === 11;
+  return i === 4 || i === 11 || i === 15;
 }
 
-function calculateValidatorDigitOldFormat(str: string) {
+function validatorDigitOldFormat(str: string) {
   let sum = 0;
   for (let i = 0; i <= 14; i++) {
     if (!isHyphenIndex(i)) sum += (15 - i) * Number(str.charAt(i));
@@ -21,7 +21,7 @@ function calculateValidatorDigitOldFormat(str: string) {
   return sum;
 }
 
-function calculateValidatorDigit(str: string) {
+function validatorDigit(str: string) {
   let n = 1;
   let sum = 0;
   for (let i = 0; i <= 14; i++) {
@@ -55,16 +55,27 @@ function isValidMunicipalityCode(str: string) {
   return false;
 }
 
+function setFullYear(year: string) {
+  return Number(year) >= 30 ? '19'.concat(year) : '20'.concat(year);
+}
+
+function isValidDate(str: string) {
+  const year = setFullYear(str.substring(4));
+  const month = str.substring(2, 4);
+  const day = str.substring(0, 2);
+  const date = new Date(`${year}/${month}/${day}`);
+  return date && Number(date.getMonth()) + 1 === Number(month);
+}
+
 function isNIT(str: string): boolean {
   if (!nitRegExp.test(str)) return false;
-
   if (!isValidMunicipalityCode(str.substring(0, 4))) return false;
-
+  if (!isValidDate(str.substring(5, 11))) return false;
   let sum = 0;
   if (Number(str.substring(12, 15)) <= 100) {
-    sum = calculateValidatorDigitOldFormat(str);
+    sum = validatorDigitOldFormat(str);
   } else {
-    sum = calculateValidatorDigit(str);
+    sum = validatorDigit(str);
   }
   return sum === Number(str.charAt(16));
 }
