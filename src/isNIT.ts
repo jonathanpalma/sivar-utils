@@ -2,7 +2,12 @@ import isMunicipalityCode from './isMunicipalityCode';
 
 export const nitRegExp = /(^\d{4})-(\d{6})-(\d{3})-(\d$)/;
 
-function calculateVerificationOldFormat(digits: string) {
+/**
+ * Calculates given the digits of a old NIT which is the check digit for that NIT
+ * @param  {string} digits     A string representing NIT digits (without hyphen)
+ * @returns {number}         Check digit of the given NIT
+ */
+function checkDigitOldFormat(digits: string):number {
   let sum = 0;
   for (let i = 0; i < digits.length; i++) {
     sum += Number(digits[i]) * (digits.length + 1 - i);
@@ -11,7 +16,12 @@ function calculateVerificationOldFormat(digits: string) {
   return sum;
 }
 
-function calculateVerification(digits: string) {
+/**
+ * Calculates given the digits of a NIT which is the check digit for that NIT
+ * @param  {string} digits     A string representing NIT digits (without hyphen)
+ * @returns {number}         check digit of the given NIT
+ */
+function checkDigit(digits: string):number {
   let sum = 0;
   for (let i = 0; i < digits.length; i++) {
     sum +=
@@ -21,13 +31,23 @@ function calculateVerification(digits: string) {
   return sum > 1 ? 11 - sum : 0;
 }
 
-function getFullYear(year: string) {
+/**
+ * Calculates the probable full-year birthday of the person, given the Year digits from Date of birth of the NIT
+ * @param  {string} year     The 2 year digits from the NIT date of birth
+ * @returns {string}         Probable full year of birth
+ */
+function getFullYear(year: string):string {
   return Number(year) >=
     Number(new Date().getFullYear().toString().substr(-2)) + 1
     ? '19'.concat(year)
     : '20'.concat(year);
 }
 
+/**
+ * Verifies that given the Date of birth from the NIT is valid
+ * @param  {string} str      A string representing the date of birth section from the NIT
+ * @returns {boolean}        Validity of the given date of birth
+ */
 function isDate(str: string): boolean {
   const year = getFullYear(str.substring(4));
   const month = str.substring(2, 4);
@@ -50,8 +70,8 @@ function isNIT(str: string): boolean {
 
   const digits = municipality + birthdate + correlative;
   const sum = correlative.startsWith('0')
-    ? calculateVerificationOldFormat(digits)
-    : calculateVerification(digits);
+    ? checkDigitOldFormat(digits)
+    : checkDigit(digits);
 
   return Number(verifier) === sum;
 }
