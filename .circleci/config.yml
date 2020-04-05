@@ -1,14 +1,14 @@
 version: 2
 jobs:
-  build:
+  test:
     working_directory: ~/sivar-utils
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:10
     steps:
       - checkout
       - run:
           name: Validate lockfile
-          command: npx lockfile-lint --path package-lock.json --type npm --allowed-hosts npm
+          command: npx lockfile-lint -p package-lock.json -t npm -a npm
       - restore_cache:
           key: npm-cache-{{ checksum "package-lock.json" }}
       - run:
@@ -21,6 +21,34 @@ jobs:
       - run:
           name: Run Tests
           command: npm test -- --verbose
+  docs-deploy:
+    working_directory: ~/sivar-utils
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
       - run:
-          name: Build
-          command: npm run build
+          name: Install Dependencies
+          command: npm ci
+      - run:
+          name: Config git user
+          command: |
+            git config user.email "ci-build@sivar-utils.org"
+            git config user.name "ci-build"
+      - add_ssh_keys:
+          fingerprints:
+            - '3c:de:50:b2:93:a8:6c:93:16:a0:af:82:89:2a:e3:0e'
+      - run:
+          name: Build and deploy docs to gh-pages
+          command: npm run deploy
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test
+      - docs-deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
