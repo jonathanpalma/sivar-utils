@@ -1,58 +1,25 @@
-import municipalitiesCode from './municipalitiesCodeRanges';
+import isMunicipalityCode from './isMunicipalityCode';
 
 export const nitRegExp = /(^\d{4})-(\d{6})-(\d{3})-(\d$)/;
 
-/**
- * Verifies that given NIT format is valid
- *
- * @param  {string} str       A string representing NIT digits (with hyphen)
- * @returns {boolean}         Validity of the given NIT
- */
-function isHyphen(i: number) {
-  return i === 4 || i === 11 || i === 15;
-}
-
-function checkDigitOldFormat(str: string) {
+function checkDigitOldFormat(digits: string) {
   let sum = 0;
-  for (let i = 0; i <= 14; i++) {
-    if (!isHyphen(i)) sum += (15 - i) * Number(str.charAt(i));
+  for (let i = 0; i < digits.length; i++) {
+    sum += (digits.length + 1 - i) * Number(digits.charAt(i));
     sum %= 11;
   }
   return sum;
 }
 
-function checkDigit(str: string) {
-  let n = 1;
+function checkDigit(digits: string) {
   let sum = 0;
-  for (let i = 0; i <= 14; i++) {
-    if (!isHyphen(i)) {
-      sum +=
-        Number(str.charAt(i)) * (3 + 6 * Math.floor(Math.abs((n + 4) / 6)) - n);
-      n += 1;
-    }
+  for (let i = 0; i < digits.length; i++) {
+    sum +=
+      Number(digits.charAt(i)) *
+      (3 + 6 * Math.floor(Math.abs((i + 5) / 6)) - i + 1);
   }
   sum %= 11;
   return sum > 1 ? 11 - sum : 0;
-}
-
-function isForeignCode(num: number) {
-  return num === 9;
-}
-
-function isNationalCode(str: string) {
-  if (!(Number(str.charAt(0)) === 0 || Number(str.charAt(0)) === 1)) return false;
-  for (let i = 0; i < municipalitiesCode.length; i++) {
-    const [minRange, maxRange] = municipalitiesCode[i];
-    if (Number(str) >= minRange && Number(str) <= maxRange) return true;
-    if (minRange >= Number(str)) return false;
-  }
-  return false;
-}
-
-function isMunicipalityCode(str: string): boolean {
-  if (isForeignCode(Number(str.charAt(0)))) return true;
-  if (isNationalCode(str)) return true;
-  return false;
 }
 
 function setFullYear(year: string) {
@@ -70,16 +37,25 @@ function isDate(str: string): boolean {
   return date && Number(date.getMonth()) + 1 === Number(month);
 }
 
+/**
+ * Verifies that given NIT format is valid
+ *
+ * @param  {string} str       A string representing NIT digits (with hyphen)
+ * @returns {boolean}         Validity of the given NIT
+ */
 function isNIT(str: string): boolean {
   if (!nitRegExp.test(str)) return false;
-  const [municipalityCode, birthDate, correlative, verifier] = str.split('-');
-  if (!isMunicipalityCode(municipalityCode)) return false;
-  if (!isDate(birthDate)) return false;
+
+  const [municipality, birthdate, correlative, verifier] = str.split('-');
+  const digits = municipality + birthdate + correlative + verifier;
+
+  if (!isMunicipalityCode(municipality)) return false;
+  if (!isDate(birthdate)) return false;
   let sum = 0;
   if (Number(correlative) <= 100) {
-    sum = checkDigitOldFormat(str);
+    sum = checkDigitOldFormat(digits);
   } else {
-    sum = checkDigit(str);
+    sum = checkDigit(digits);
   }
   return sum === Number(verifier);
 }
