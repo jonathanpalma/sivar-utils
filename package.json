@@ -20,14 +20,19 @@
   "jsnext:main": "lib/index.es.js",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "cz": "git-cz",
     "deploy": "gh-pages -d docs",
+    "dev": "rollup -c -w",
     "doc": "typedoc",
     "lint": "eslint \"src/**/*.ts\"",
+    "lockfile-lint": "lockfile-lint -p package-lock.json -t npm -a npm",
+    "precommit": "lint-staged && npm run lockfile-lint && npm run test --verbose",
     "predeploy": "npm run doc && shx cp -r .github/gh-pages/. docs/",
     "prepare": "npm run build",
+    "release": "standard-version",
     "test:watch": "npm run test -- --watch",
-    "test": "jest"
+    "test": "jest",
+    "validate": "npm run lint && npm run prettier -- --list-different"
   },
   "repository": {
     "type": "git",
@@ -40,12 +45,15 @@
   },
   "homepage": "https://github.com/jonathanpalma/sivar-utils#readme",
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@rollup/plugin-url": "^4.0.2",
     "@types/jest": "^25.1.4",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
+    "cz-conventional-changelog": "^3.1.0",
     "eslint": "^6.0.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.0.0",
@@ -53,12 +61,16 @@
     "eslint-plugin-jsdoc": "^22.1.0",
     "eslint-plugin-prettier": "^3.1.0",
     "gh-pages": "^2.2.0",
+    "husky": "^4.2.3",
     "jest": "^25.2.4",
+    "lint-staged": "^10.1.2",
+    "lockfile-lint": "^4.2.2",
     "prettier": "^2.0.2",
     "rollup": "^2.3.2",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-typescript2": "^0.27.0",
     "shx": "^0.3.2",
+    "standard-version": "^7.1.0",
     "ts-jest": "^25.3.0",
     "typedoc": "^0.17.3",
     "typescript": "^3.8.3"
@@ -79,6 +91,21 @@
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/public/"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run precommit"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint"
+    ],
+    "*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)": [
+      "prettier --write",
+      "git add"
     ]
   },
   "prettier": {
@@ -148,6 +175,11 @@
           ]
         }
       }
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
   }
 }

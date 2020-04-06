@@ -4,13 +4,12 @@
   <p>Utilidades para validar documentos salvadoreños (DUI, NIT, etc...)</p>
 </div>
 
-
 [![Version][version-badge]][package]
 [![Build][build-badge]][build]
 [![Install Size][size-badge]][package-size]
 [![Downloads][downloads-badge]][npmcharts]
 [![PRs Welcome][prs-badge]][prs]
-<!-- [![Commitizen friendly][cz-badge]][cz] -->
+[![Commitizen friendly][cz-badge]][cz]
 [![MIT License][license-badge]][license]
 
 [![Watch on GitHub][github-watch-badge]][github-watch]
@@ -24,7 +23,6 @@
 ```
 npm install -S sivar-utils
 ```
-
 
 ## License
 
@@ -40,8 +38,8 @@ MIT © [jonathanpalma](https://github.com/jonathanpalma)
 [prs]: http://makeapullrequest.com
 [build-badge]: https://img.shields.io/circleci/build/gh/jonathanpalma/sivar-utils?style=flat-square
 [build]: https://circleci.com/gh/jonathanpalma/sivar-utils
-<!-- [cz-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square -->
-<!-- [cz]: http://commitizen.github.io/cz-cli/ -->
+[cz-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square
+[cz]: http://commitizen.github.io/cz-cli/
 [size-badge]: https://flat.badgen.net/packagephobia/install/sivar-utils
 [version-badge]: https://img.shields.io/npm/v/sivar-utils.svg?style=flat-square
 [github-watch-badge]: https://img.shields.io/github/watchers/jonathanpalma/sivar-utils.svg?style=social
