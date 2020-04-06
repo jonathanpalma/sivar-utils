@@ -24,7 +24,7 @@
     "deploy": "gh-pages -d docs",
     "doc": "typedoc",
     "lint": "eslint \"src/**/*.ts\"",
-    "predeploy": "npm run doc && shx cp -r gh-pages/. docs/",
+    "predeploy": "npm run doc && shx cp -r .github/gh-pages/. docs/",
     "prepare": "npm run build",
     "test:watch": "npm run test -- --watch",
     "test": "jest"
