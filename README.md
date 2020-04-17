@@ -1,7 +1,7 @@
 <div align="center">
   <h1>sivar-utils 🇸🇻</h1>
 
-  <p>Utilidades para validar documentos salvadoreños (DUI, NIT, etc...)</p>
+  <p>TS/JS utils para el desarrollo de sistemas salvadoreños (Validacion de docs DUI, NIT, etc...)</p>
 </div>
 
 [![Version][version-badge]][package]
