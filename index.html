@@ -84,7 +84,58 @@
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h3>Installation</h3>
 				</a>
-				<pre><code>npm <span class="hljs-keyword">install</span> -S sivar-utils</code></pre>
+				<pre><code>npm <span class="hljs-keyword">install</span> <span class="hljs-comment">--save sivar-utils</span></code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h3>Usage</h3>
+				</a>
+				<ul>
+					<li>
+						<a href="#isdui" id="isdui" style="color: inherit; text-decoration: none;">
+							<h4>isDUI</h4>
+						</a>
+					</li>
+				</ul>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isDUI } <span class="hljs-keyword">from</span> <span class="hljs-string">'sivar-utils'</span>;
+
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">'test'</span>;
+<span class="hljs-keyword">const</span> fakeDUI = <span class="hljs-string">'00000000-0'</span>;
+<span class="hljs-keyword">const</span> validDUI = <span class="hljs-string">'02495046-3'</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
+
+isDUI(str); <span class="hljs-comment">// false</span>
+isDUI(fakeDUI); <span class="hljs-comment">// false</span>
+isDUI(validDUI); <span class="hljs-comment">// true</span></code></pre>
+				<ul>
+					<li>
+						<a href="#isnit" id="isnit" style="color: inherit; text-decoration: none;">
+							<h4>isNIT</h4>
+						</a>
+					</li>
+				</ul>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isNIT } <span class="hljs-keyword">from</span> <span class="hljs-string">'sivar-utils'</span>;
+
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">'test'</span>;
+<span class="hljs-keyword">const</span> fakeNIT = <span class="hljs-string">'0000-000000-000-0'</span>;
+<span class="hljs-keyword">const</span> validNIT = <span class="hljs-string">'0614-051286-129-4'</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
+
+isNIT(str); <span class="hljs-comment">// false</span>
+isNIT(fakeNIT); <span class="hljs-comment">// false</span>
+isNIT(validNIT); <span class="hljs-comment">// true</span></code></pre>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h2>Contributing</h2>
+				</a>
+				<a href="#how-to-contribute" id="how-to-contribute" style="color: inherit; text-decoration: none;">
+					<h3>How to contribute?</h3>
+				</a>
+				<p>This is a <code>commitizen friendly</code> repository, so instead of creating commits using <code>git commit</code>, please use our custom CLI by running:</p>
+				<pre><code class="language-sh">npm run cz</code></pre>
+				<a href="#formatting-amp-linting" id="formatting-amp-linting" style="color: inherit; text-decoration: none;">
+					<h4>Formatting &amp; Linting</h4>
+				</a>
+				<p>Make sure you have installed the following plugins on your Code Editor</p>
+				<ul>
+					<li><a href="https://eslint.org/">ESLint</a></li>
+					<li><a href="https://prettier.io/">Prettier</a></li>
+				</ul>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
