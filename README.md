@@ -21,8 +21,55 @@
 ### Installation
 
 ```
-npm install -S sivar-utils
+npm install --save sivar-utils
 ```
+
+### Usage
+
+- #### isDUI
+
+```ts
+import { isDUI } from 'sivar-utils';
+
+const str = 'test';
+const fakeDUI = '00000000-0';
+const validDUI = '02495046-3'; // DISCLAIMER: taken from Google
+
+isDUI(str); // false
+isDUI(fakeDUI); // false
+isDUI(validDUI); // true
+```
+
+- #### isNIT
+
+```ts
+import { isNIT } from 'sivar-utils';
+
+const str = 'test';
+const fakeNIT = '0000-000000-000-0';
+const validNIT = '0614-051286-129-4'; // DISCLAIMER: taken from Google
+
+isNIT(str); // false
+isNIT(fakeNIT); // false
+isNIT(validNIT); // true
+```
+
+## Contributing
+
+### How to contribute?
+
+This is a `commitizen friendly` repository, so instead of creating commits using `git commit`, please use our custom CLI by running:
+
+```sh
+npm run cz
+```
+
+#### Formatting & Linting
+
+Make sure you have installed the following plugins on your Code Editor
+
+- [ESLint][url-eslint]
+- [Prettier][url-prettier]
 
 ## License
 
@@ -46,5 +93,7 @@ MIT © [jonathanpalma](https://github.com/jonathanpalma)
 [github-watch]: https://github.com/jonathanpalma/sivar-utils/watchers
 [github-star-badge]: https://img.shields.io/github/stars/jonathanpalma/sivar-utils.svg?style=social
 [github-star]: https://github.com/jonathanpalma/sivar-utils/stargazers
+[url-eslint]: https://eslint.org/
+[url-prettier]: https://prettier.io/
 [twitter]: https://twitter.com/intent/tweet?text=Check%20out%20sivar-utils!%20https://github.com/jonathanpalma/sivar-utils
 [twitter-badge]: https://img.shields.io/twitter/url/https/github.com/jonathanpalma/sivar-utils.svg?style=social

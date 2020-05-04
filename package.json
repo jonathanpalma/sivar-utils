@@ -29,6 +29,7 @@
     "precommit": "lint-staged && npm run lockfile-lint && npm run test --verbose",
     "predeploy": "npm run doc && shx cp -r .github/gh-pages/. docs/",
     "prepare": "npm run build",
+    "prettier": "prettier \"src/**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|mdx)\"",
     "release": "standard-version",
     "test:watch": "npm run test -- --watch",
     "test": "jest",
