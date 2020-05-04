@@ -45,8 +45,12 @@ workflows:
   version: 2
   build:
     jobs:
-      - test
+      - test:
+          ignore:
+            - gh-pages
       - docs-deploy:
+          ignore:
+            - gh-pages
           requires:
             - test
           filters:
