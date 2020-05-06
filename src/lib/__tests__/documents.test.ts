@@ -1,6 +1,6 @@
 import { isDUI, isNIT } from '../documents';
 
-describe('document', () => {
+describe('documents', () => {
   let cases: [string, boolean][] = [];
 
   describe('isDUI', () => {

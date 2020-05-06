@@ -1,6 +1,6 @@
 import { isMunicipalityCode } from '../municipalities';
 
-describe('document', () => {
+describe('municipalities', () => {
   let cases: [string, boolean][] = [];
 
   describe('isMunicipalityCode', () => {

@@ -26,7 +26,7 @@
     "doc": "typedoc",
     "lint": "eslint \"src/**/*.ts\"",
     "lockfile-lint": "lockfile-lint -p package-lock.json -t npm -a npm",
-    "precommit": "lint-staged && npm run lockfile-lint && npm run test --verbose",
+    "precommit": "lint-staged && npm run lockfile-lint && npm run test -- --verbose",
     "predeploy": "npm run doc && shx cp -r .github/gh-pages/. docs/",
     "prepare": "npm run build",
     "prettier": "prettier \"src/**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|mdx)\"",
