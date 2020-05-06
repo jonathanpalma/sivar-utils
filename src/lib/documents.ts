@@ -1,6 +1,26 @@
-import isMunicipalityCode from './isMunicipalityCode';
+import { isMunicipalityCode } from './municipalities';
+import { isDate } from './utils';
 
+export const duiRegExp = /(^\d{8})-(\d$)/;
 export const nitRegExp = /(^\d{4})-(\d{6})-(\d{3})-(\d$)/;
+
+/**
+ * Verifies that given DUI format is valid
+ *
+ * @param  {string} str       A string representing DUI digits (with hyphen)
+ * @returns {boolean}         Validity of the given DUI
+ */
+export function isDUI(str: string): boolean {
+  if (!duiRegExp.test(str)) return false;
+
+  let sum = 0;
+  const [digits, verifier] = str.split('-');
+  for (let i = 0; i < digits.length; i++) {
+    sum += Number(digits[i]) * (digits.length + 1 - i);
+  }
+
+  return Number(verifier) === 10 - (sum % 10);
+}
 
 /**
  * Calculates verification value for a given old format NIT
@@ -8,7 +28,7 @@ export const nitRegExp = /(^\d{4})-(\d{6})-(\d{3})-(\d$)/;
  * @param  {string} digits    A string representing NIT digits (without hyphen and verifier)
  * @returns {number}          Verification value for a given old format NIT
  */
-function calculateVerificationOldFormat(digits: string): number {
+function calculateNitVerificationOldFormat(digits: string): number {
   let sum = 0;
   for (let i = 0; i < digits.length; i++) {
     sum += Number(digits[i]) * (digits.length + 1 - i);
@@ -23,7 +43,7 @@ function calculateVerificationOldFormat(digits: string): number {
  * @param  {string} digits    A string representing NIT digits (without hyphen and verifier)
  * @returns {number}          Verification value for a given NIT
  */
-function calculateVerification(digits: string): number {
+function calculateNitVerification(digits: string): number {
   let sum = 0;
   for (let i = 0; i < digits.length; i++) {
     sum +=
@@ -34,39 +54,12 @@ function calculateVerification(digits: string): number {
 }
 
 /**
- * Calculates full year for a given two-digit format year
- *
- * @param  {string} year      A string representing two-digit format year
- * @returns {string}          Full year
- */
-function getFullYear(year: string): string {
-  return Number(year) >=
-    Number(new Date().getFullYear().toString().substr(-2)) + 1
-    ? '19'.concat(year)
-    : '20'.concat(year);
-}
-
-/**
- * Verifies that given NIT format birthdate is valid
- *
- * @param  {string} str       A string representing NIT format birthdate
- * @returns {boolean}         Validity of the given birthdate
- */
-function isDate(str: string): boolean {
-  const year = getFullYear(str.substring(4));
-  const month = str.substring(2, 4);
-  const day = str.substring(0, 2);
-  const date = new Date(`${year}/${month}/${day}`);
-  return date && Number(date.getMonth()) + 1 === Number(month);
-}
-
-/**
  * Verifies that given NIT format is valid
  *
  * @param  {string} str       A string representing NIT digits (with hyphen)
  * @returns {boolean}         Validity of the given NIT
  */
-function isNIT(str: string): boolean {
+export function isNIT(str: string): boolean {
   if (!nitRegExp.test(str)) return false;
 
   const [municipality, birthdate, correlative, verifier] = str.split('-');
@@ -74,10 +67,8 @@ function isNIT(str: string): boolean {
 
   const digits = municipality + birthdate + correlative;
   const sum = correlative.startsWith('0')
-    ? calculateVerificationOldFormat(digits)
-    : calculateVerification(digits);
+    ? calculateNitVerificationOldFormat(digits)
+    : calculateNitVerification(digits);
 
   return Number(verifier) === sum;
 }
-
-export default isNIT;
