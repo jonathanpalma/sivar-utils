@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;isNIT&quot; | sivar-utils</title>
+	<title>&quot;lib/documents&quot; | sivar-utils</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_isnit_.html">&quot;isNIT&quot;</a>
+					<a href="_lib_documents_.html">&quot;lib/documents&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;isNIT&quot;</h1>
+			<h1>Module &quot;lib/documents&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,17 +73,17 @@
 						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_isnit_.html#nitregexp" class="tsd-kind-icon">nit<wbr>Reg<wbr>Exp</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_lib_documents_.html#duiregexp" class="tsd-kind-icon">dui<wbr>Reg<wbr>Exp</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_lib_documents_.html#nitregexp" class="tsd-kind-icon">nit<wbr>Reg<wbr>Exp</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_isnit_.html#calculateverification" class="tsd-kind-icon">calculate<wbr>Verification</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_isnit_.html#calculateverificationoldformat" class="tsd-kind-icon">calculate<wbr>Verification<wbr>Old<wbr>Format</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_isnit_.html#getfullyear" class="tsd-kind-icon">get<wbr>Full<wbr>Year</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_isnit_.html#isdate" class="tsd-kind-icon">is<wbr>Date</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_isnit_.html#isnit" class="tsd-kind-icon">isNIT</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_lib_documents_.html#calculatenitverification" class="tsd-kind-icon">calculate<wbr>Nit<wbr>Verification</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_lib_documents_.html#calculatenitverificationoldformat" class="tsd-kind-icon">calculate<wbr>Nit<wbr>Verification<wbr>Old<wbr>Format</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_lib_documents_.html#isdui" class="tsd-kind-icon">isDUI</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_lib_documents_.html#isnit" class="tsd-kind-icon">isNIT</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,12 +92,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="duiregexp" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> dui<wbr>Reg<wbr>Exp</h3>
+					<div class="tsd-signature tsd-kind-icon">dui<wbr>Reg<wbr>Exp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /(^\d{8})-(\d$)/</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/14e8bd7/src/lib/documents.ts#L4">lib/documents.ts:4</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
 					<a name="nitregexp" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> nit<wbr>Reg<wbr>Exp</h3>
 					<div class="tsd-signature tsd-kind-icon">nit<wbr>Reg<wbr>Exp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /(^\d{4})-(\d{6})-(\d{3})-(\d$)/</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/412e756/src/isNIT.ts#L3">isNIT.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/14e8bd7/src/lib/documents.ts#L5">lib/documents.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -105,16 +115,16 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="calculateverification" class="tsd-anchor"></a>
-					<h3>calculate<wbr>Verification</h3>
+					<a name="calculatenitverification" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Nit<wbr>Verification</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Verification<span class="tsd-signature-symbol">(</span>digits<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Nit<wbr>Verification<span class="tsd-signature-symbol">(</span>digits<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/412e756/src/isNIT.ts#L26">isNIT.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/14e8bd7/src/lib/documents.ts#L46">lib/documents.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -137,16 +147,16 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="calculateverificationoldformat" class="tsd-anchor"></a>
-					<h3>calculate<wbr>Verification<wbr>Old<wbr>Format</h3>
+					<a name="calculatenitverificationoldformat" class="tsd-anchor"></a>
+					<h3>calculate<wbr>Nit<wbr>Verification<wbr>Old<wbr>Format</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Verification<wbr>Old<wbr>Format<span class="tsd-signature-symbol">(</span>digits<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>Nit<wbr>Verification<wbr>Old<wbr>Format<span class="tsd-signature-symbol">(</span>digits<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/412e756/src/isNIT.ts#L11">isNIT.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/14e8bd7/src/lib/documents.ts#L31">lib/documents.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -168,54 +178,22 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="getfullyear" class="tsd-anchor"></a>
-					<h3>get<wbr>Full<wbr>Year</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Full<wbr>Year<span class="tsd-signature-symbol">(</span>year<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="isdui" class="tsd-anchor"></a>
+					<h3>isDUI</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">isDUI<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/412e756/src/isNIT.ts#L42">isNIT.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/14e8bd7/src/lib/documents.ts#L13">lib/documents.ts:13</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Calculates full year for a given two-digit format year</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>year: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>A string representing two-digit format year</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-							<p>Full year</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="isdate" class="tsd-anchor"></a>
-					<h3>is<wbr>Date</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Date<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/412e756/src/isNIT.ts#L55">isNIT.ts:55</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Verifies that given NIT format birthdate is valid</p>
+									<p>Verifies that given DUI format is valid</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -223,12 +201,12 @@
 								<li>
 									<h5>str: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A string representing NIT format birthdate</p>
+										<p>A string representing DUI digits (with hyphen)</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>Validity of the given birthdate</p>
+							<p>Validity of the given DUI</p>
 						</li>
 					</ul>
 				</section>
@@ -242,7 +220,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/412e756/src/isNIT.ts#L69">isNIT.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/14e8bd7/src/lib/documents.ts#L62">lib/documents.ts:62</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -275,36 +253,36 @@
 					<li class=" tsd-kind-module">
 						<a href="_index_.html">&quot;index&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="_isdui_.html">&quot;isDUI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="_ismunicipalitycode_.html">&quot;is<wbr>Municipality<wbr>Code&quot;</a>
-					</li>
 					<li class="current tsd-kind-module">
-						<a href="_isnit_.html">&quot;isNIT&quot;</a>
+						<a href="_lib_documents_.html">&quot;lib/documents&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_lib_municipalities_.html">&quot;lib/municipalities&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_lib_utils_.html">&quot;lib/utils&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="_isnit_.html#nitregexp" class="tsd-kind-icon">nit<wbr>Reg<wbr>Exp</a>
+						<a href="_lib_documents_.html#duiregexp" class="tsd-kind-icon">dui<wbr>Reg<wbr>Exp</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_lib_documents_.html#nitregexp" class="tsd-kind-icon">nit<wbr>Reg<wbr>Exp</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_isnit_.html#calculateverification" class="tsd-kind-icon">calculate<wbr>Verification</a>
+						<a href="_lib_documents_.html#calculatenitverification" class="tsd-kind-icon">calculate<wbr>Nit<wbr>Verification</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_isnit_.html#calculateverificationoldformat" class="tsd-kind-icon">calculate<wbr>Verification<wbr>Old<wbr>Format</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_isnit_.html#getfullyear" class="tsd-kind-icon">get<wbr>Full<wbr>Year</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_isnit_.html#isdate" class="tsd-kind-icon">is<wbr>Date</a>
+						<a href="_lib_documents_.html#calculatenitverificationoldformat" class="tsd-kind-icon">calculate<wbr>Nit<wbr>Verification<wbr>Old<wbr>Format</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_isnit_.html#isnit" class="tsd-kind-icon">isNIT</a>
+						<a href="_lib_documents_.html#isdui" class="tsd-kind-icon">isDUI</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_lib_documents_.html#isnit" class="tsd-kind-icon">isNIT</a>
 					</li>
 				</ul>
 			</nav>
