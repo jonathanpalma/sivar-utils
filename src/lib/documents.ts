@@ -19,7 +19,7 @@ export function isDUI(str: string): boolean {
     sum += Number(digits[i]) * (digits.length + 1 - i);
   }
 
-  return Number(verifier) === 10 - (sum % 10);
+  return Number(verifier) === (10 - (sum % 10)) % 10 && sum > 0;
 }
 
 /**
