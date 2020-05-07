@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/jonathanpalma/sivar-utils/compare/v1.0.3...v1.0.4) (2020-05-07)
+
+### Bug Fixes
+
+- **documents.ts:** add validation for DUIs that have a verifier of 0 ([2406e5a](https://github.com/jonathanpalma/sivar-utils/commit/2406e5a32ab23b46aabe482c46c5239eda624d40)), closes [#2](https://github.com/jonathanpalma/sivar-utils/issues/2)
+
 ### [1.0.3](https://github.com/jonathanpalma/sivar-utils/compare/v1.0.2...v1.0.3) (2020-05-06)
 
 ### [1.0.2](https://github.com/jonathanpalma/sivar-utils/compare/v1.0.1...v1.0.2) (2020-04-06)
