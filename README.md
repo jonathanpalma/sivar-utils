@@ -1,4 +1,7 @@
 <div align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
   <h1>sivar-utils 🇸🇻</h1>
 
   <p>TS/JS utils para el desarrollo de sistemas salvadoreños (Validacion de docs DUI, NIT, etc...)</p>
@@ -97,3 +100,22 @@ MIT © [jonathanpalma](https://github.com/jonathanpalma)
 [url-prettier]: https://prettier.io/
 [twitter]: https://twitter.com/intent/tweet?text=Check%20out%20sivar-utils!%20https://github.com/jonathanpalma/sivar-utils
 [twitter-badge]: https://img.shields.io/twitter/url/https/github.com/jonathanpalma/sivar-utils.svg?style=social
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/alepaz"><img src="https://avatars0.githubusercontent.com/u/5847822?v=4" width="100px;" alt=""/><br /><sub><b>Alejandro Paz</b></sub></a><br /><a href="https://github.com/jonathanpalma/sivar-utils/commits?author=alepaz" title="Tests">⚠️</a> <a href="https://github.com/jonathanpalma/sivar-utils/commits?author=alepaz" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
