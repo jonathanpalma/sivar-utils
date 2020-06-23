@@ -12,7 +12,7 @@
 [![Commitizen friendly][cz-badge]][cz]
 [![MIT License][license-badge]][license]
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Watch on GitHub][github-watch-badge]][github-watch]
@@ -84,6 +84,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/alepaz"><img src="https://avatars0.githubusercontent.com/u/5847822?v=4" width="100px;" alt=""/><br /><sub><b>Alejandro Paz</b></sub></a><br /><a href="https://github.com/jonathanpalma/sivar-utils/commits?author=alepaz" title="Tests">⚠️</a> <a href="https://github.com/jonathanpalma/sivar-utils/commits?author=alepaz" title="Code">💻</a></td>
+    <td align="center"><a href="http://monge1h.com"><img src="https://avatars1.githubusercontent.com/u/38824634?v=4" width="100px;" alt=""/><br /><sub><b>Jorge Monge</b></sub></a><br /><a href="https://github.com/jonathanpalma/sivar-utils/commits?author=Monge1h" title="Code">💻</a></td>
   </tr>
 </table>
 
