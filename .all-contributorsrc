@@ -14,6 +14,15 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "Monge1h",
+      "name": "Jorge Monge",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/38824634?v=4",
+      "profile": "http://monge1h.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
