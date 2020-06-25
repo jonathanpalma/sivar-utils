@@ -61,6 +61,7 @@
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsdoc": "^22.1.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "fast-check": "^1.25.1",
     "gh-pages": "^2.2.0",
     "husky": "^4.2.3",
     "jest": "^25.2.4",
