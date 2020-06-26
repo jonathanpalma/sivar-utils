@@ -28,6 +28,15 @@ const mobilePhone: () => fc.Arbitrary<string> = () =>
  */
 const residentialPhone: () => fc.Arbitrary<string> = () =>
   fc.integer(20000000, 29999999).map(maskPhoneNumber);
+/**
+ * Generate not assigned phone numbers
+ *
+ * @returns {() => fc.Arbitrary<string>} A random residential phone number
+ */
+const unassignedPhone: () => fc.Arbitrary<string> = () =>
+  fc
+    .oneof(fc.integer(10000000, 19999999), fc.integer(80000000, 99999999))
+    .map(maskPhoneNumber);
 
 describe('telephones', () => {
   describe('isMobilePhone', () => {
@@ -73,7 +82,7 @@ describe('telephones', () => {
     test('should returns false for everything else', () =>
       fc.assert(
         fc.property(
-          fc.oneof(fc.hexaString(), fc.base64String()),
+          fc.oneof(unassignedPhone()),
           (phone) => !isPhoneNumber(phone)
         )
       ));
