@@ -11,8 +11,11 @@
 [![PRs Welcome][prs-badge]][prs]
 [![Commitizen friendly][cz-badge]][cz]
 [![MIT License][license-badge]][license]
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Watch on GitHub][github-watch-badge]][github-watch]
@@ -57,6 +60,48 @@ isNIT(fakeNIT); // false
 isNIT(validNIT); // true
 ```
 
+- #### isMobilePhoneNumber
+
+```ts
+import { isMobilePhoneNumber } from 'sivar-utils';
+
+const str = 'test';
+const fakeMobilePhone = '9999-9999';
+const validMobilePhone = '7071-1244'; // DISCLAIMER: taken from Google
+
+isMobilePhoneNumber(str); // false
+isMobilePhoneNumber(fakeMobilePhone); // false
+isMobilePhoneNumber(validMobilePhone); // true
+```
+
+- #### isResidentialPhoneNumber
+
+```ts
+import { isResidentialPhoneNumber } from 'sivar-utils';
+
+const str = 'test';
+const fakeResidentialPhone = '5555-5555';
+const validResidentialPhone = '2244-4777'; // DISCLAIMER: taken from Google
+
+isResidentialPhoneNumber(str); // false
+isResidentialPhoneNumber(fakeResidentialPhone); // false
+isResidentialPhoneNumber(validResidentialPhone); // true
+```
+
+- #### isPhoneNumber
+
+```ts
+import { isPhoneNumber } from 'sivar-utils';
+
+const str = 'test';
+const fakePhone = '1234-5678';
+const validPhone = '2591-3000'; /* or '7725-4747' */ // DISCLAIMER: taken from Google
+
+isPhoneNumber(str); // false
+isPhoneNumber(fakePhone); // false
+isPhoneNumber(validPhone); // true
+```
+
 ## Contributing
 
 ### How to contribute?
@@ -91,6 +136,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
