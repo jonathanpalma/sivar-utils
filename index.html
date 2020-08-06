@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>sivar-utils</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for sivar-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -98,11 +98,11 @@
 						</a>
 					</li>
 				</ul>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isDUI } <span class="hljs-keyword">from</span> <span class="hljs-string">'sivar-utils'</span>;
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isDUI } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sivar-utils&#x27;</span>;
 
-<span class="hljs-keyword">const</span> str = <span class="hljs-string">'test'</span>;
-<span class="hljs-keyword">const</span> fakeDUI = <span class="hljs-string">'00000000-0'</span>;
-<span class="hljs-keyword">const</span> validDUI = <span class="hljs-string">'02495046-3'</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">&#x27;test&#x27;</span>;
+<span class="hljs-keyword">const</span> fakeDUI = <span class="hljs-string">&#x27;00000000-0&#x27;</span>;
+<span class="hljs-keyword">const</span> validDUI = <span class="hljs-string">&#x27;02495046-3&#x27;</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
 
 isDUI(str); <span class="hljs-comment">// false</span>
 isDUI(fakeDUI); <span class="hljs-comment">// false</span>
@@ -114,11 +114,11 @@ isDUI(validDUI); <span class="hljs-comment">// true</span></code></pre>
 						</a>
 					</li>
 				</ul>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isNIT } <span class="hljs-keyword">from</span> <span class="hljs-string">'sivar-utils'</span>;
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isNIT } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sivar-utils&#x27;</span>;
 
-<span class="hljs-keyword">const</span> str = <span class="hljs-string">'test'</span>;
-<span class="hljs-keyword">const</span> fakeNIT = <span class="hljs-string">'0000-000000-000-0'</span>;
-<span class="hljs-keyword">const</span> validNIT = <span class="hljs-string">'0614-051286-129-4'</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">&#x27;test&#x27;</span>;
+<span class="hljs-keyword">const</span> fakeNIT = <span class="hljs-string">&#x27;0000-000000-000-0&#x27;</span>;
+<span class="hljs-keyword">const</span> validNIT = <span class="hljs-string">&#x27;0614-051286-129-4&#x27;</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
 
 isNIT(str); <span class="hljs-comment">// false</span>
 isNIT(fakeNIT); <span class="hljs-comment">// false</span>
@@ -130,11 +130,11 @@ isNIT(validNIT); <span class="hljs-comment">// true</span></code></pre>
 						</a>
 					</li>
 				</ul>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isMobilePhoneNumber } <span class="hljs-keyword">from</span> <span class="hljs-string">'sivar-utils'</span>;
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isMobilePhoneNumber } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sivar-utils&#x27;</span>;
 
-<span class="hljs-keyword">const</span> str = <span class="hljs-string">'test'</span>;
-<span class="hljs-keyword">const</span> fakeMobilePhone = <span class="hljs-string">'9999-9999'</span>;
-<span class="hljs-keyword">const</span> validMobilePhone = <span class="hljs-string">'7071-1244'</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">&#x27;test&#x27;</span>;
+<span class="hljs-keyword">const</span> fakeMobilePhone = <span class="hljs-string">&#x27;9999-9999&#x27;</span>;
+<span class="hljs-keyword">const</span> validMobilePhone = <span class="hljs-string">&#x27;7071-1244&#x27;</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
 
 isMobilePhoneNumber(str); <span class="hljs-comment">// false</span>
 isMobilePhoneNumber(fakeMobilePhone); <span class="hljs-comment">// false</span>
@@ -146,11 +146,11 @@ isMobilePhoneNumber(validMobilePhone); <span class="hljs-comment">// true</span>
 						</a>
 					</li>
 				</ul>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isResidentialPhoneNumber } <span class="hljs-keyword">from</span> <span class="hljs-string">'sivar-utils'</span>;
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isResidentialPhoneNumber } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sivar-utils&#x27;</span>;
 
-<span class="hljs-keyword">const</span> str = <span class="hljs-string">'test'</span>;
-<span class="hljs-keyword">const</span> fakeResidentialPhone = <span class="hljs-string">'5555-5555'</span>;
-<span class="hljs-keyword">const</span> validResidentialPhone = <span class="hljs-string">'2244-4777'</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">&#x27;test&#x27;</span>;
+<span class="hljs-keyword">const</span> fakeResidentialPhone = <span class="hljs-string">&#x27;5555-5555&#x27;</span>;
+<span class="hljs-keyword">const</span> validResidentialPhone = <span class="hljs-string">&#x27;2244-4777&#x27;</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
 
 isResidentialPhoneNumber(str); <span class="hljs-comment">// false</span>
 isResidentialPhoneNumber(fakeResidentialPhone); <span class="hljs-comment">// false</span>
@@ -162,11 +162,11 @@ isResidentialPhoneNumber(validResidentialPhone); <span class="hljs-comment">// t
 						</a>
 					</li>
 				</ul>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isPhoneNumber } <span class="hljs-keyword">from</span> <span class="hljs-string">'sivar-utils'</span>;
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isPhoneNumber } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sivar-utils&#x27;</span>;
 
-<span class="hljs-keyword">const</span> str = <span class="hljs-string">'test'</span>;
-<span class="hljs-keyword">const</span> fakePhone = <span class="hljs-string">'1234-5678'</span>;
-<span class="hljs-keyword">const</span> validPhone = <span class="hljs-string">'2591-3000'</span>; <span class="hljs-comment">/* or '7725-4747' */</span> <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">&#x27;test&#x27;</span>;
+<span class="hljs-keyword">const</span> fakePhone = <span class="hljs-string">&#x27;1234-5678&#x27;</span>;
+<span class="hljs-keyword">const</span> validPhone = <span class="hljs-string">&#x27;2591-3000&#x27;</span>; <span class="hljs-comment">/* or &#x27;7725-4747&#x27; */</span> <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
 
 isPhoneNumber(str); <span class="hljs-comment">// false</span>
 isPhoneNumber(fakePhone); <span class="hljs-comment">// false</span>
@@ -260,6 +260,5 @@ isPhoneNumber(validPhone); <span class="hljs-comment">// true</span></code></pre
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
