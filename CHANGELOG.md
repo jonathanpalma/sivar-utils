@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/jonathanpalma/sivar-utils/compare/v1.0.4...v1.1.0) (2020-08-06)
+
+### Features
+
+- add validation to phone number by format ([6da4486](https://github.com/jonathanpalma/sivar-utils/commit/6da4486d064949fbc1248f7560cb74eb388e49e2))
+
 ### [1.0.4](https://github.com/jonathanpalma/sivar-utils/compare/v1.0.3...v1.0.4) (2020-05-07)
 
 ### Bug Fixes
