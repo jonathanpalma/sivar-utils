@@ -33,6 +33,17 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "leosuncin",
+      "name": "Jaime Leonardo Suncin Cruz",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4307697?v=4",
+      "profile": "https://github.com/leosuncin",
+      "contributions": [
+        "code",
+        "test",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
