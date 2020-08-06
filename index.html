@@ -123,6 +123,54 @@ isDUI(validDUI); <span class="hljs-comment">// true</span></code></pre>
 isNIT(str); <span class="hljs-comment">// false</span>
 isNIT(fakeNIT); <span class="hljs-comment">// false</span>
 isNIT(validNIT); <span class="hljs-comment">// true</span></code></pre>
+				<ul>
+					<li>
+						<a href="#ismobilephonenumber" id="ismobilephonenumber" style="color: inherit; text-decoration: none;">
+							<h4>isMobilePhoneNumber</h4>
+						</a>
+					</li>
+				</ul>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isMobilePhoneNumber } <span class="hljs-keyword">from</span> <span class="hljs-string">'sivar-utils'</span>;
+
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">'test'</span>;
+<span class="hljs-keyword">const</span> fakeMobilePhone = <span class="hljs-string">'9999-9999'</span>;
+<span class="hljs-keyword">const</span> validMobilePhone = <span class="hljs-string">'7071-1244'</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
+
+isMobilePhoneNumber(str); <span class="hljs-comment">// false</span>
+isMobilePhoneNumber(fakeMobilePhone); <span class="hljs-comment">// false</span>
+isMobilePhoneNumber(validMobilePhone); <span class="hljs-comment">// true</span></code></pre>
+				<ul>
+					<li>
+						<a href="#isresidentialphonenumber" id="isresidentialphonenumber" style="color: inherit; text-decoration: none;">
+							<h4>isResidentialPhoneNumber</h4>
+						</a>
+					</li>
+				</ul>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isResidentialPhoneNumber } <span class="hljs-keyword">from</span> <span class="hljs-string">'sivar-utils'</span>;
+
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">'test'</span>;
+<span class="hljs-keyword">const</span> fakeResidentialPhone = <span class="hljs-string">'5555-5555'</span>;
+<span class="hljs-keyword">const</span> validResidentialPhone = <span class="hljs-string">'2244-4777'</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
+
+isResidentialPhoneNumber(str); <span class="hljs-comment">// false</span>
+isResidentialPhoneNumber(fakeResidentialPhone); <span class="hljs-comment">// false</span>
+isResidentialPhoneNumber(validResidentialPhone); <span class="hljs-comment">// true</span></code></pre>
+				<ul>
+					<li>
+						<a href="#isphonenumber" id="isphonenumber" style="color: inherit; text-decoration: none;">
+							<h4>isPhoneNumber</h4>
+						</a>
+					</li>
+				</ul>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isPhoneNumber } <span class="hljs-keyword">from</span> <span class="hljs-string">'sivar-utils'</span>;
+
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">'test'</span>;
+<span class="hljs-keyword">const</span> fakePhone = <span class="hljs-string">'1234-5678'</span>;
+<span class="hljs-keyword">const</span> validPhone = <span class="hljs-string">'2591-3000'</span>; <span class="hljs-comment">/* or '7725-4747' */</span> <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
+
+isPhoneNumber(str); <span class="hljs-comment">// false</span>
+isPhoneNumber(fakePhone); <span class="hljs-comment">// false</span>
+isPhoneNumber(validPhone); <span class="hljs-comment">// true</span></code></pre>
 				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
 					<h2>Contributing</h2>
 				</a>
@@ -177,6 +225,9 @@ isNIT(validNIT); <span class="hljs-comment">// true</span></code></pre>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_lib_municipalities_.html">&quot;lib/municipalities&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_lib_telephones_.html">&quot;lib/telephones&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_lib_utils_.html">&quot;lib/utils&quot;</a>
