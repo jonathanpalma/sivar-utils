@@ -89,15 +89,20 @@ function calculateNitVerification(digits: string): number {
 }
 
 /**
- * Verifies that given NIT format is valid
+ * Verifies that given NIT digits are valid for a specific verifier
  *
- * @param  {string} str       A string representing NIT digits (with hyphen)
- * @returns {boolean}         Validity of the given NIT
+ * @param  {string} municipality    Municipality code of the NIT (4 digits)
+ * @param  {string} birthdate       Birthday fragment of the NIT (6 digit)
+ * @param  {string} correlative     Correlative in the NIT (3 digit)
+ * @param  {string} verifier        NIT verifier (1 digit)
+ * @returns {boolean}               Validity of the given NIT
  */
-export function isNIT(str: string): boolean {
-  if (!nitRegExp.test(str)) return false;
-
-  const [municipality, birthdate, correlative, verifier] = str.split('-');
+function isValidNIT(
+  municipality: string,
+  birthdate: string,
+  correlative: string,
+  verifier: string,
+): boolean {
   if (!isMunicipalityCode(municipality) || !isDate(birthdate)) return false;
 
   const digits = municipality + birthdate + correlative;
@@ -106,6 +111,44 @@ export function isNIT(str: string): boolean {
     : calculateNitVerification(digits);
 
   return Number(verifier) === sum;
+}
+
+/**
+ * Verifies that given NIT with hyphens is valid
+ *
+ * @param  {string} str       A string representing NIT digits (with hyphens)
+ * @returns {boolean}         Validity of the given NIT
+ */
+function isNITWithHyphen(str: string): boolean {
+  if (!nitRegExp.test(str)) return false;
+  const [municipality, birthdate, correlative, verifier] = str.split('-');
+  return isValidNIT(municipality, birthdate, correlative, verifier);
+}
+
+/**
+ * Verifies that given NIT in numeric format is valid
+ *
+ * @param  {string} str       A string representing NIT digits (without hyphens)
+ * @returns {boolean}         Validity of the given NIT
+ */
+function isNITWithNumbers(str: string): boolean {
+  if (!(str.length === 14)) return false;
+  const municipality = str.slice(0, 4);
+  const birthdate = str.slice(4, 10);
+  const correlative = str.slice(10, 13);
+  const verifier = str.slice(13);
+  return isValidNIT(municipality, birthdate, correlative, verifier);
+}
+
+/**
+ * Verifies that given NIT format is valid
+ *
+ * @param  {string} str       A string representing NIT digits (with hyphen)
+ * @returns {boolean}         Validity of the given NIT
+ */
+export function isNIT(str: string): boolean {
+  if (Number(str)) return isNITWithNumbers(str);
+  return isNITWithHyphen(str);
 }
 
 /**
