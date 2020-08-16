@@ -6,21 +6,55 @@ export const nitRegExp = /(^\d{4})-(\d{6})-(\d{3})-(\d$)/;
 export const passportRegExp = /^[A|B|D]\d{8}$/;
 
 /**
+ * Verifies that given DUI digits are valid for a specific verifier
+ *
+ * @param  {number} digits    A number representing DUI digits (8 digits)
+ * @param  {number} verifier  A number representing DUI verifier (1 digit)
+ * @returns {boolean}         Validity of the given DUI
+ */
+function isValidDUI(digits: number, verifier: number): boolean {
+  let sum = 0;
+  for (let i = 0; i < String(digits).length; i++) {
+    sum += Number(String(digits)[i]) * (String(digits).length + 1 - i);
+  }
+
+  return Number(verifier) === (10 - (sum % 10)) % 10 && sum > 0;
+}
+
+/**
+ * Verifies that given DUI with hyphen is valid
+ *
+ * @param  {string} str       A string representing DUI digits (with hyphen)
+ * @returns {boolean}         Validity of the given DUI
+ */
+function isDUIWithHyphen(str: string): boolean {
+  if (!duiRegExp.test(str)) return false;
+  const [digits, verifier] = str.split('-');
+  return isValidDUI(Number(digits), Number(verifier));
+}
+
+/**
+ * Verifies that given DUI in numeric format is valid
+ *
+ * @param  {string} str       A string representing DUI digits (without hyphen)
+ * @returns {boolean}         Validity of the given DUI
+ */
+function isDUIWithNumbers(str: string): boolean {
+  if (!(str.length === 9)) return false;
+  const digits = str.slice(0, 8);
+  const verifier = str.slice(8);
+  return isValidDUI(Number(digits), Number(verifier));
+}
+
+/**
  * Verifies that given DUI format is valid
  *
  * @param  {string} str       A string representing DUI digits (with hyphen)
  * @returns {boolean}         Validity of the given DUI
  */
 export function isDUI(str: string): boolean {
-  if (!duiRegExp.test(str)) return false;
-
-  let sum = 0;
-  const [digits, verifier] = str.split('-');
-  for (let i = 0; i < digits.length; i++) {
-    sum += Number(digits[i]) * (digits.length + 1 - i);
-  }
-
-  return Number(verifier) === (10 - (sum % 10)) % 10 && sum > 0;
+  if (Number(str)) return isDUIWithNumbers(str);
+  return isDUIWithHyphen(str);
 }
 
 /**

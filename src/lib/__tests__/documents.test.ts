@@ -14,6 +14,12 @@ describe('documents', () => {
       ['03766021-3', true],
       ['05149147-4', true],
       ['05149149-0', true],
+      ['051491490', true],
+      ['05149149-', false],
+      ['051491491', false],
+      ['037660213', true],
+      ['037660212', false],
+      ['03766021', false],
     ];
     test.each(cases)('given %s should return %s', (arg, expected) => {
       const result = isDUI(arg);
