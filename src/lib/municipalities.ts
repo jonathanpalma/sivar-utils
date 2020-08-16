@@ -26,7 +26,7 @@ const municipalitiesLookup: lookupTable<number> = {
  * @param  {string} code      A string representing municipality digits
  * @returns {boolean}         Foreign validity of the given municipality
  */
-function isForeignCode(code: string) {
+export function isForeignCode(code: string) {
   return code.startsWith('9');
 }
 
@@ -36,7 +36,7 @@ function isForeignCode(code: string) {
  * @param  {string} code      A string representing municipality digits
  * @returns {boolean}         National validity of the given municipality
  */
-function isNationalCode(code: string) {
+export function isNationalCode(code: string) {
   if (!code.startsWith('0') && !code.startsWith('1')) return false;
 
   const department = code.substring(0, 2);
@@ -50,8 +50,6 @@ function isNationalCode(code: string) {
  * @param  {string} code      A string representing municipality digits
  * @returns {boolean}         Validity of the given municipality
  */
-function isMunicipalityCode(code: string): boolean {
+export function isMunicipalityCode(code: string): boolean {
   return code.length === 4 && (isForeignCode(code) || isNationalCode(code));
 }
-
-export default isMunicipalityCode;

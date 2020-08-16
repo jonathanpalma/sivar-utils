@@ -1,0 +1,55 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "alepaz",
+      "name": "Alejandro Paz",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5847822?v=4",
+      "profile": "https://github.com/alepaz",
+      "contributions": [
+        "test",
+        "code"
+      ]
+    },
+    {
+      "login": "Monge1h",
+      "name": "Jorge Monge",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/38824634?v=4",
+      "profile": "http://monge1h.com",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "ricardoerl",
+      "name": "Ricardo Ramírez",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1808048?v=4",
+      "profile": "http://ricardoerl.com",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "leosuncin",
+      "name": "Jaime Leonardo Suncin Cruz",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4307697?v=4",
+      "profile": "https://github.com/leosuncin",
+      "contributions": [
+        "code",
+        "test",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "sivar-utils",
+  "projectOwner": "jonathanpalma",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

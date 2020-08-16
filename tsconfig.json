@@ -69,5 +69,11 @@
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
   "include": ["./src/**/*.ts"],
-  "exclude": ["node_modules", "lib", "rollup.config.js"]
+  "exclude": [
+    "./src/**/*.test.ts",
+    "commitlint.config.js",
+    "lib",
+    "node_modules",
+    "rollup.config.js"
+  ]
 }

@@ -9,6 +9,7 @@ coverage
 # production
 build
 lib
+!src/lib
 
 # documentation
 docs
