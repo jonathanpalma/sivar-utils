@@ -1,7 +1,7 @@
 import { isMunicipalityCode } from './municipalities';
 import { isDate } from './utils';
 
-export const duiRegExp = /(^\d{8})-(\d$)/;
+export const duiRegExp = /(^\d{8})-?(\d$)/;
 export const nitRegExp = /(^\d{4})-(\d{6})-(\d{3})-(\d$)/;
 
 /**
@@ -11,13 +11,18 @@ export const nitRegExp = /(^\d{4})-(\d{6})-(\d{3})-(\d$)/;
  * @returns {boolean}         Validity of the given DUI
  */
 export function isDUI(str: string): boolean {
-  if (!duiRegExp.test(str)) return false;
+  const [duiValue, digitsSection, verifier] = str.match(duiRegExp) ?? [];
+  if (!duiValue) return false;
 
-  let sum = 0;
-  const [digits, verifier] = str.split('-');
-  for (let i = 0; i < digits.length; i++) {
-    sum += Number(digits[i]) * (digits.length + 1 - i);
-  }
+  const digits = digitsSection.split('');
+
+  const [sum] = digits.reduce(
+    ([total, position], digit) => [
+      total + Number(digit) * position,
+      position - 1,
+    ],
+    [0, 9]
+  );
 
   return Number(verifier) === (10 - (sum % 10)) % 10 && sum > 0;
 }
