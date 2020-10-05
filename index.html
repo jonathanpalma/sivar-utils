@@ -119,10 +119,12 @@ isDUI(validDUI); <span class="hljs-comment">// true</span></code></pre>
 <span class="hljs-keyword">const</span> str = <span class="hljs-string">&#x27;test&#x27;</span>;
 <span class="hljs-keyword">const</span> fakeNIT = <span class="hljs-string">&#x27;0000-000000-000-0&#x27;</span>;
 <span class="hljs-keyword">const</span> validNIT = <span class="hljs-string">&#x27;0614-051286-129-4&#x27;</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
+<span class="hljs-keyword">const</span> alsoValidNIT = <span class="hljs-string">&#x27;06140512861294&#x27;</span>;
 
 isNIT(str); <span class="hljs-comment">// false</span>
 isNIT(fakeNIT); <span class="hljs-comment">// false</span>
-isNIT(validNIT); <span class="hljs-comment">// true</span></code></pre>
+isNIT(validNIT); <span class="hljs-comment">// true</span>
+isNIT(alsoValidNIT); <span class="hljs-comment">// true</span></code></pre>
 				<ul>
 					<li>
 						<a href="#ismobilephonenumber" id="ismobilephonenumber" style="color: inherit; text-decoration: none;">
