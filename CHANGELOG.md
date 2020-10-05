@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/jonathanpalma/sivar-utils/compare/v1.1.1...v1.4.0) (2020-10-05)
+
+### Features
+
+- add passport validation ([51f3d2d](https://github.com/jonathanpalma/sivar-utils/commit/51f3d2dde9b857a88c92c03fce9c182d8ff0535e))
+- add support for NIT without the hyphen ([3f08aab](https://github.com/jonathanpalma/sivar-utils/commit/3f08aab63d9f3a01a70cc9b5be9cda16f99cfbb1))
+
+## [1.4.0](https://github.com/jonathanpalma/sivar-utils/compare/v1.1.1...v1.4.0) (2020-10-05)
+
+### Features
+
+- add passport validation ([51f3d2d](https://github.com/jonathanpalma/sivar-utils/commit/51f3d2dde9b857a88c92c03fce9c182d8ff0535e))
+- add support for NIT without the hyphen ([3f08aab](https://github.com/jonathanpalma/sivar-utils/commit/3f08aab63d9f3a01a70cc9b5be9cda16f99cfbb1))
+
+## [1.3.0](https://github.com/jonathanpalma/sivar-utils/compare/v1.1.1...v1.3.0) (2020-10-05)
+
+### Features
+
+- add passport validation ([51f3d2d](https://github.com/jonathanpalma/sivar-utils/commit/51f3d2dde9b857a88c92c03fce9c182d8ff0535e))
+- add support for NIT without the hyphen ([3f08aab](https://github.com/jonathanpalma/sivar-utils/commit/3f08aab63d9f3a01a70cc9b5be9cda16f99cfbb1))
+
+## [1.2.0](https://github.com/jonathanpalma/sivar-utils/compare/v1.1.1...v1.2.0) (2020-10-05)
+
+### Features
+
+- add passport validation ([51f3d2d](https://github.com/jonathanpalma/sivar-utils/commit/51f3d2dde9b857a88c92c03fce9c182d8ff0535e))
+- add support for NIT without the hyphen ([3f08aab](https://github.com/jonathanpalma/sivar-utils/commit/3f08aab63d9f3a01a70cc9b5be9cda16f99cfbb1))
+
 ### [1.1.1](https://github.com/jonathanpalma/sivar-utils/compare/v1.1.0...v1.1.1) (2020-08-06)
 
 ## [1.1.0](https://github.com/jonathanpalma/sivar-utils/compare/v1.0.4...v1.1.0) (2020-08-06)
