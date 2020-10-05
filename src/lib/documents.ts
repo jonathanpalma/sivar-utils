@@ -3,6 +3,7 @@ import { isDate } from './utils';
 
 export const duiRegExp = /(^\d{8})-(\d$)/;
 export const nitRegExp = /((^\d{4})-(\d{6})-(\d{3})-(\d$))|(^\d{14}$)/;
+export const passportRegExp = /^[a-zA-Z]\d{8}$/;
 
 /**
  * Verifies that given DUI format is valid
@@ -85,4 +86,14 @@ export function isNIT(str: string): boolean {
     : calculateNitVerification(digits);
 
   return Number(verifier) === sum;
+}
+
+/**
+ * Verifies that given Passport format is valid
+ *
+ * @param  {string} str       A string representing the passport
+ * @returns {boolean}         Validity of the given passport
+ */
+export function isPassport(str: string): boolean {
+  return passportRegExp.test(str.toUpperCase());
 }
