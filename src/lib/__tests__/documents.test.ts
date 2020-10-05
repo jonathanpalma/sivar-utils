@@ -34,6 +34,15 @@ describe('documents', () => {
       ['0614-051286-129-4', true],
       ['0614-110790-113-7', true],
       ['0614-080803-111-4', true],
+      ['06140512861294', true],
+      ['06142902031111', false],
+      ['0614080803111', false],
+      ['06141107901137', true],
+      ['06140808031114', true],
+      ['0614-1107901137', false],
+      ['0614080803-1114', false],
+      ['0614-110790-1137', false],
+      ['0614080803111-4', false],
     ];
     test.each(cases)('given %s should return %s', (arg, expected) => {
       const result = isNIT(arg);

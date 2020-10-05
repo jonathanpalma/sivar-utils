@@ -52,10 +52,12 @@ import { isNIT } from 'sivar-utils';
 const str = 'test';
 const fakeNIT = '0000-000000-000-0';
 const validNIT = '0614-051286-129-4'; // DISCLAIMER: taken from Google
+const alsoValidNIT = '06140512861294';
 
 isNIT(str); // false
 isNIT(fakeNIT); // false
 isNIT(validNIT); // true
+isNIT(alsoValidNIT); // true
 ```
 
 - #### isMobilePhoneNumber
