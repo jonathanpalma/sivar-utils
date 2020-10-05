@@ -2,7 +2,7 @@ import { isMunicipalityCode } from './municipalities';
 import { isDate } from './utils';
 
 export const duiRegExp = /(^\d{8})-(\d$)/;
-export const nitRegExp = /(^\d{4})-(\d{6})-(\d{3})-(\d$)/;
+export const nitRegExp = /((^\d{4})-(\d{6})-(\d{3})-(\d$))|(^\d{14}$)/;
 
 /**
  * Verifies that given DUI format is valid
@@ -54,6 +54,18 @@ function calculateNitVerification(digits: string): number {
 }
 
 /**
+ * @param  {string} str       A string representing NIT digits (with hyphen)
+ * @returns {string[]}        NIT compounds
+ */
+function splitNIT(str: string): string[] {
+  const municipality = str.substring(0, 4);
+  const birthdate = str.substring(4, 10);
+  const correlative = str.substring(10, 13);
+  const verifier = str.substring(13);
+  return [municipality, birthdate, correlative, verifier];
+}
+
+/**
  * Verifies that given NIT format is valid
  *
  * @param  {string} str       A string representing NIT digits (with hyphen)
@@ -62,7 +74,9 @@ function calculateNitVerification(digits: string): number {
 export function isNIT(str: string): boolean {
   if (!nitRegExp.test(str)) return false;
 
-  const [municipality, birthdate, correlative, verifier] = str.split('-');
+  const [municipality, birthdate, correlative, verifier] = str.includes('-')
+    ? str.split('-')
+    : splitNIT(str);
   if (!isMunicipalityCode(municipality) || !isDate(birthdate)) return false;
 
   const digits = municipality + birthdate + correlative;
