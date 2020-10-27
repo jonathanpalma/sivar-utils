@@ -13,7 +13,9 @@
 [![MIT License][license-badge]][license]
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Watch on GitHub][github-watch-badge]][github-watch]
@@ -102,6 +104,20 @@ isPhoneNumber(fakePhone); // false
 isPhoneNumber(validPhone); // true
 ```
 
+- #### isPassport
+
+```ts
+import { isPassport } from 'sivar-utils';
+
+const str = 'test';
+const fakePassport = '$03766021';
+const validPassport = 'A12345678';
+
+isPassport(str); // false
+isPassport(fakePassport); // false
+isPassport(validPassport); // true
+```
+
 - #### isCarPlate
 
 ```ts
@@ -153,6 +169,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
