@@ -73,6 +73,7 @@
 						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_lib_documents_.html#carplateregexp" class="tsd-kind-icon">car<wbr>Plate<wbr>Reg<wbr>Exp</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_lib_documents_.html#duiregexp" class="tsd-kind-icon">dui<wbr>Reg<wbr>Exp</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_lib_documents_.html#nitregexp" class="tsd-kind-icon">nit<wbr>Reg<wbr>Exp</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_lib_documents_.html#passportregexp" class="tsd-kind-icon">passport<wbr>Reg<wbr>Exp</a></li>
@@ -83,6 +84,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_lib_documents_.html#calculatenitverification" class="tsd-kind-icon">calculate<wbr>Nit<wbr>Verification</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_lib_documents_.html#calculatenitverificationoldformat" class="tsd-kind-icon">calculate<wbr>Nit<wbr>Verification<wbr>Old<wbr>Format</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_lib_documents_.html#iscarplate" class="tsd-kind-icon">is<wbr>Car<wbr>Plate</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_lib_documents_.html#isdui" class="tsd-kind-icon">isDUI</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_lib_documents_.html#isnit" class="tsd-kind-icon">isNIT</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_lib_documents_.html#ispassport" class="tsd-kind-icon">is<wbr>Passport</a></li>
@@ -95,12 +97,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="carplateregexp" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> car<wbr>Plate<wbr>Reg<wbr>Exp</h3>
+					<div class="tsd-signature tsd-kind-icon">car<wbr>Plate<wbr>Reg<wbr>Exp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /^(O|N|CD|CC|P|A|C|V|PR|T|RE|AB|MI|MB|F|M|D|PNC|E)\d{1,6}$/i</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/44d888b/src/lib/documents.ts#L7">lib/documents.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
 					<a name="duiregexp" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> dui<wbr>Reg<wbr>Exp</h3>
 					<div class="tsd-signature tsd-kind-icon">dui<wbr>Reg<wbr>Exp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /(^\d{8})-(\d$)/</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/2ac797b/src/lib/documents.ts#L4">lib/documents.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/44d888b/src/lib/documents.ts#L4">lib/documents.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -110,7 +122,7 @@
 					<div class="tsd-signature tsd-kind-icon">nit<wbr>Reg<wbr>Exp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /((^\d{4})-(\d{6})-(\d{3})-(\d$))|(^\d{14}$)/</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/2ac797b/src/lib/documents.ts#L5">lib/documents.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/44d888b/src/lib/documents.ts#L5">lib/documents.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -120,7 +132,7 @@
 					<div class="tsd-signature tsd-kind-icon">passport<wbr>Reg<wbr>Exp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /^[a-zA-Z]\d{8}$/</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/2ac797b/src/lib/documents.ts#L6">lib/documents.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/44d888b/src/lib/documents.ts#L6">lib/documents.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -137,7 +149,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/2ac797b/src/lib/documents.ts#L47">lib/documents.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/44d888b/src/lib/documents.ts#L48">lib/documents.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -169,7 +181,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/2ac797b/src/lib/documents.ts#L32">lib/documents.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/44d888b/src/lib/documents.ts#L33">lib/documents.ts:33</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -192,6 +204,38 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="iscarplate" class="tsd-anchor"></a>
+					<h3>is<wbr>Car<wbr>Plate</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Car<wbr>Plate<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/44d888b/src/lib/documents.ts#L108">lib/documents.ts:108</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Verifies that given car plate is valid</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>str: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A string representing a car plate</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Validity of the given Car Plate</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="isdui" class="tsd-anchor"></a>
 					<h3>isDUI</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -201,7 +245,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/2ac797b/src/lib/documents.ts#L14">lib/documents.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/44d888b/src/lib/documents.ts#L15">lib/documents.ts:15</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -233,7 +277,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/2ac797b/src/lib/documents.ts#L75">lib/documents.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/44d888b/src/lib/documents.ts#L76">lib/documents.ts:76</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -246,7 +290,7 @@
 								<li>
 									<h5>str: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A string representing NIT digits (with hyphen)</p>
+										<p>A string representing NIT digits</p>
 									</div>
 								</li>
 							</ul>
@@ -265,7 +309,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/2ac797b/src/lib/documents.ts#L97">lib/documents.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/44d888b/src/lib/documents.ts#L98">lib/documents.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -297,7 +341,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/2ac797b/src/lib/documents.ts#L61">lib/documents.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/jonathanpalma/sivar-utils/blob/44d888b/src/lib/documents.ts#L62">lib/documents.ts:62</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -344,6 +388,9 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="_lib_documents_.html#carplateregexp" class="tsd-kind-icon">car<wbr>Plate<wbr>Reg<wbr>Exp</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
 						<a href="_lib_documents_.html#duiregexp" class="tsd-kind-icon">dui<wbr>Reg<wbr>Exp</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
@@ -357,6 +404,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_lib_documents_.html#calculatenitverificationoldformat" class="tsd-kind-icon">calculate<wbr>Nit<wbr>Verification<wbr>Old<wbr>Format</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_lib_documents_.html#iscarplate" class="tsd-kind-icon">is<wbr>Car<wbr>Plate</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_lib_documents_.html#isdui" class="tsd-kind-icon">isDUI</a>

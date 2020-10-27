@@ -173,6 +173,24 @@ isResidentialPhoneNumber(validResidentialPhone); <span class="hljs-comment">// t
 isPhoneNumber(str); <span class="hljs-comment">// false</span>
 isPhoneNumber(fakePhone); <span class="hljs-comment">// false</span>
 isPhoneNumber(validPhone); <span class="hljs-comment">// true</span></code></pre>
+				<ul>
+					<li>
+						<a href="#iscarplate" id="iscarplate" style="color: inherit; text-decoration: none;">
+							<h4>isCarPlate</h4>
+						</a>
+					</li>
+				</ul>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isCarPlate } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sivar-utils&#x27;</span>;
+
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">&#x27;test&#x27;</span>;
+<span class="hljs-keyword">const</span> fakePlate = <span class="hljs-string">&#x27;XY525929&#x27;</span>;
+<span class="hljs-keyword">const</span> validNationalPlate = <span class="hljs-string">&#x27;N10731&#x27;</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
+<span class="hljs-keyword">const</span> validParticularPlate = <span class="hljs-string">&#x27;p525929&#x27;</span>; <span class="hljs-comment">// DISCLAIMER: taken from Google</span>
+
+isCarPlate(str); <span class="hljs-comment">// false</span>
+isCarPlate(fakePlate); <span class="hljs-comment">// false</span>
+isCarPlate(validNationalPlate); <span class="hljs-comment">// true</span>
+isCarPlate(validParticularPlate); <span class="hljs-comment">// true</span></code></pre>
 				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
 					<h2>Contributing</h2>
 				</a>
