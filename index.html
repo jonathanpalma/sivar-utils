@@ -175,6 +175,22 @@ isPhoneNumber(fakePhone); <span class="hljs-comment">// false</span>
 isPhoneNumber(validPhone); <span class="hljs-comment">// true</span></code></pre>
 				<ul>
 					<li>
+						<a href="#ispassport" id="ispassport" style="color: inherit; text-decoration: none;">
+							<h4>isPassport</h4>
+						</a>
+					</li>
+				</ul>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { isPassport } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sivar-utils&#x27;</span>;
+
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">&#x27;test&#x27;</span>;
+<span class="hljs-keyword">const</span> fakePassport = <span class="hljs-string">&#x27;$03766021&#x27;</span>;
+<span class="hljs-keyword">const</span> validPassport = <span class="hljs-string">&#x27;A12345678&#x27;</span>;
+
+isPassport(str); <span class="hljs-comment">// false</span>
+isPassport(fakePassport); <span class="hljs-comment">// false</span>
+isPassport(validPassport); <span class="hljs-comment">// true</span></code></pre>
+				<ul>
+					<li>
 						<a href="#iscarplate" id="iscarplate" style="color: inherit; text-decoration: none;">
 							<h4>isCarPlate</h4>
 						</a>
