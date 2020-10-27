@@ -4,6 +4,7 @@ import { isDate } from './utils';
 export const duiRegExp = /(^\d{8})-(\d$)/;
 export const nitRegExp = /((^\d{4})-(\d{6})-(\d{3})-(\d$))|(^\d{14}$)/;
 export const passportRegExp = /^[a-zA-Z]\d{8}$/;
+export const carPlateRegExp = /^(O|N|CD|CC|P|A|C|V|PR|T|RE|AB|MI|MB|F|M|D|PNC|E)\d{1,6}$/i;
 
 /**
  * Verifies that given DUI format is valid
@@ -69,7 +70,7 @@ function splitNIT(str: string): string[] {
 /**
  * Verifies that given NIT format is valid
  *
- * @param  {string} str       A string representing NIT digits (with hyphen)
+ * @param  {string} str       A string representing NIT digits
  * @returns {boolean}         Validity of the given NIT
  */
 export function isNIT(str: string): boolean {
@@ -96,4 +97,14 @@ export function isNIT(str: string): boolean {
  */
 export function isPassport(str: string): boolean {
   return passportRegExp.test(str.toUpperCase());
+}
+
+/**
+ * Verifies that given car plate is valid
+ *
+ * @param  {string} str       A string representing a car plate
+ * @returns {boolean}         Validity of the given Car Plate
+ */
+export function isCarPlate(str: string): boolean {
+  return carPlateRegExp.test(str);
 }
