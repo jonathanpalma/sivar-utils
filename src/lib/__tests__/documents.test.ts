@@ -1,4 +1,4 @@
-import { isDUI, isNIT, isPassport } from '../documents';
+import { isDUI, isNIT, isPassport, isCarPlate } from '../documents';
 
 describe('documents', () => {
   let cases: [string, boolean][] = [];
@@ -69,6 +69,32 @@ describe('documents', () => {
     ];
     test.each(cases)('given %s should return %s', (arg, expected) => {
       const result = isPassport(arg);
+      expect(result).toBe(expected);
+    });
+  });
+
+  describe('isCarPlate', () => {
+    cases = [
+      ['', false],
+      ['p123456', true],
+      ['N123456', true],
+      ['N10731', true],
+      ['N9715', true],
+      ['P525929', true],
+      ['CC123456', true],
+      ['e123456', true],
+      ['V123456', true],
+      ['v123456', true],
+      ['ve123456', false],
+      ['Z123456', false],
+      ['CD123456', true],
+      ['pnc123456', true],
+      ['CD123dfg456', false],
+      ['1CD1', false],
+      ['N-10731', false],
+    ];
+    test.each(cases)('given %s should return %s', (arg, expected) => {
+      const result = isCarPlate(arg);
       expect(result).toBe(expected);
     });
   });

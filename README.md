@@ -102,6 +102,22 @@ isPhoneNumber(fakePhone); // false
 isPhoneNumber(validPhone); // true
 ```
 
+- #### isCarPlate
+
+```ts
+import { isCarPlate } from 'sivar-utils';
+
+const str = 'test';
+const fakePlate = 'XY525929';
+const validNationalPlate = 'N10731'; // DISCLAIMER: taken from Google
+const validParticularPlate = 'p525929'; // DISCLAIMER: taken from Google
+
+isCarPlate(str); // false
+isCarPlate(fakePlate); // false
+isCarPlate(validNationalPlate); // true
+isCarPlate(validParticularPlate); // true
+```
+
 ## Contributing
 
 ### How to contribute?
