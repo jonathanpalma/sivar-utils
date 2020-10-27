@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/jonathanpalma/sivar-utils/compare/v1.4.0...v1.5.0) (2020-10-27)
+
+### Features
+
+- add car plates validation ([44d888b](https://github.com/jonathanpalma/sivar-utils/commit/44d888bfabda6f6dc10bf15488e10b2364f1a247))
+
 ## [1.4.0](https://github.com/jonathanpalma/sivar-utils/compare/v1.1.1...v1.4.0) (2020-10-05)
 
 ### Features
